@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps and Deployment Strategies - Free Ebook Download</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header {
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .main-content {
+            background: white;
+            margin: 20px auto;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            max-width: 800px;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero-section h2 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .hero-section p {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        
+        .ebook-mockup {
+            width: 200px;
+            height: 280px;
+            background: linear-gradient(145deg, #667eea, #764ba2);
+            margin: 0 auto 30px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .benefits {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .benefits h3 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            font-size: 1.5em;
+        }
+        
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-item::before {
+            content: "✓";
+            background: #27ae60;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        
+        .download-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 3px solid #667eea;
+        }
+        
+        .download-form h3 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            font-size: 1.8em;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .download-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .trust-item::before {
+            content: "🔒";
+            margin-right: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: white;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                margin: 10px;
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .hero-section h2 {
+                font-size: 1.8em;
+            }
+            
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Your Company</h1>
+            <p>Your trusted source for expert knowledge</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="hero-section">
+                <div class="ebook-mockup">
+                    DevOps and Deployment Strategies
+                    <br><br>
+                    by Expert Author
+                </div>
+                <h2>Get Your FREE Copy of<br>"DevOps and Deployment Strategies"</h2>
+                <p>Discover the essential insights and strategies that industry experts don't want you to know. Download your copy now and transform your understanding today!</p>
+            </div>
+
+            <div class="benefits">
+                <h3>What You'll Learn Inside:</h3>
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <span>Proven strategies from industry experts</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span>Step-by-step actionable guidance</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span>Real-world case studies and examples</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span>Common mistakes to avoid</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span>Tools and resources for success</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span>Future trends and opportunities</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="download-form">
+                <h3>Download Your FREE Ebook Now!</h3>
+                <form id="downloadForm">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <button type="submit" class="download-btn">Get Instant Access</button>
+                </form>
+                
+                <div class="trust-indicators">
+                    <div class="trust-item">100% Secure</div>
+                    <div class="trust-item">No Spam Ever</div>
+                    <div class="trust-item">Unsubscribe Anytime</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('downloadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value;
+            const email = document.getElementById('email').value;
+            
+            // Store form data in localStorage for next page
+            localStorage.setItem('userFirstName', firstName);
+            localStorage.setItem('userEmail', email);
+            
+            // Redirect to checkout page
+            window.location.href = 'checkout.html';
+        });
+    </script>
+</body>
+</html>
