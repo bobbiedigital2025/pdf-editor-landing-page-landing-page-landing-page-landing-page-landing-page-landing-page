@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Your Ebook is Ready!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .thank-you-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .thank-you-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        
+        .thank-you-card::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .success-icon::before {
+            content: "✓";
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .order-details {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .order-details h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .ebook-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .ebook-cover {
+            width: 120px;
+            height: 160px;
+            background: linear-gradient(145deg, #667eea, #764ba2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .ebook-details h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .ebook-details p {
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+        
+        .download-section {
+            background: white;
+            border: 2px solid #27ae60;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+        }
+        
+        .next-steps {
+            text-align: left;
+            background: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .next-steps h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .next-steps ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .next-steps li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: #7f8c8d;
+        }
+        
+        .next-steps li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #f39c12;
+            font-weight: bold;
+        }
+        
+        .social-share {
+            margin-top: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .social-share h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .share-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .share-btn.twitter {
+            background: #1da1f2;
+        }
+        
+        .share-btn.facebook {
+            background: #4267B2;
+        }
+        
+        .share-btn.linkedin {
+            background: #2867B2;
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .footer-note {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e1e8ed;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            position: relative;
+            z-index: 2;
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-card {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .ebook-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .share-btn {
+                width: 200px;
+                justify-content: center;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .thank-you-card {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="thank-you-card">
+            <div class="success-icon"></div>
+            
+            <h1>Thank You!</h1>
+            <p class="subtitle">Your order has been processed successfully. Your ebook is ready for download!</p>
+            
+            <div class="order-details">
+                <h2>Order Confirmation</h2>
+                
+                <div class="ebook-info">
+                    <div class="ebook-cover" id="ebookCover">
+                        DevOps and Deployment Strategies
+                    </div>
+                    <div class="ebook-details">
+                        <h3 id="ebookTitle">DevOps and Deployment Strategies</h3>
+                        <p><strong>Author:</strong> Expert Author</p>
+                        <p><strong>Format:</strong> PDF</p>
+                        <p><strong>Pages:</strong> Professional quality</p>
+                        <p><strong>Price:</strong> FREE</p>
+                    </div>
+                </div>
+                
+                <div class="download-section">
+                    <h3>Download Your Ebook</h3>
+                    <p>Click the button below to download your ebook. The download link will also be sent to your email address.</p>
+                    <a href="#" class="download-btn" id="downloadBtn">📥 Download PDF</a>
+                    <a href="#" class="download-btn" style="background: linear-gradient(135deg, #667eea, #764ba2);">📱 Read Online</a>
+                </div>
+            </div>
+            
+            <div class="next-steps">
+                <h3>What's Next?</h3>
+                <ul>
+                    <li>Check your email for a copy of your download link</li>
+                    <li>Save the PDF to your device for offline reading</li>
+                    <li>Share this valuable resource with friends and colleagues</li>
+                    <li>Follow us on social media for more free resources</li>
+                    <li>Consider joining our premium newsletter for exclusive content</li>
+                </ul>
+            </div>
+            
+            <div class="social-share">
+                <h3>Share the Knowledge</h3>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn twitter" id="twitterShare">
+                        🐦 Share on Twitter
+                    </a>
+                    <a href="#" class="share-btn facebook" id="facebookShare">
+                        📘 Share on Facebook
+                    </a>
+                    <a href="#" class="share-btn linkedin" id="linkedinShare">
+                        💼 Share on LinkedIn
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-note">
+                <p><strong>Need Help?</strong> If you have any issues downloading your ebook, please contact our support team.</p>
+                <p>© 2024 Your Company. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load ebook info from localStorage
+            const ebookTitle = localStorage.getItem('ebookTitle') || 'DevOps and Deployment Strategies';
+            
+            // Set up download functionality
+            document.getElementById('downloadBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Create a sample PDF download (in real implementation, this would be your actual PDF)
+                const link = document.createElement('a');
+                link.href = 'data:application/pdf;base64,JVBERi0xLjcKCjEgMCBvYmoKPDwKL1R5cGUgL0NhdGFsb2cKL091dGxpbmVzIDIgMCBSCi9QYWdlcyAzIDAgUgo+PgplbmRvYmoKCjIgMCBvYmoKPDwKL1R5cGUgL091dGxpbmVzCi9Db3VudCAwCj4+CmVuZG9iagoKMyAwIG9iago8PAovVHlwZSAvUGFnZXMKL0NvdW50IDEKVHJ1cHAgZW5jb2RlZCBQREYgZmlsZS4uLgo+PgplbmRvYmoKCnhyZWYKMCA0CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAwOSAwMDAwMCBuIAowMDAwMDAwMDc0IDAwMDAwIG4gCjAwMDAwMDAxMjAgMDAwMDAgbiAKdHJhaWxlcgo8PAovU2l6ZSA0Ci9Sb290IDEgMCBSCj4+CnN0YXJ0eHJlZgoyOTMKJSVFT0Y=';
+                link.download = ebookTitle.replace(/[^a-z0-9]/gi, '_').toLowerCase() + '.pdf';
+                link.click();
+                
+                // Show success message
+                alert('Your ebook download has started! Check your Downloads folder.');
+            });
+            
+            // Set up social sharing
+            const shareText = `Check out this amazing free ebook: "${ebookTitle}" by Expert Author`;
+            const shareUrl = window.location.href;
+            
+            document.getElementById('twitterShare').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+            document.getElementById('facebookShare').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+            document.getElementById('linkedinShare').href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+            
+            // Clear localStorage after successful completion
+            setTimeout(() => {
+                localStorage.removeItem('userFirstName');
+                localStorage.removeItem('userEmail');
+                localStorage.removeItem('orderComplete');
+                localStorage.removeItem('ebookTitle');
+            }, 30000); // Clear after 30 seconds
+        });
+    </script>
+</body>
+</html>
